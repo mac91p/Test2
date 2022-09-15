@@ -17,7 +17,7 @@ public abstract class Person {
     public abstract double getIncome();
 
     public String getSex() {
-        String sex = "";
+        String sex;
         int i = Character.getNumericValue(pesel.toCharArray()[10]);
         if (i % 2 == 0)
             sex = "Female";
@@ -25,5 +25,15 @@ public abstract class Person {
             sex = "Male";
         }
         return sex;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pesel='" + pesel + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

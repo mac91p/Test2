@@ -20,29 +20,25 @@ public class Main {
     static Figure getHighestPerimeter(Figure[] figures) {
         if (figures == null)
             throw new IllegalArgumentException("Brak tablicy");
-        int index = 0;
-        double maxPerimeterValue = 0;
+        Figure maxArea = figures[0];
         for (int i = 0; i < figures.length; i++) {
-            if (figures[i].calculatePerimeter() > maxPerimeterValue) {
-                maxPerimeterValue = figures[i].calculatePerimeter();
-                index = i;
+            if (figures[i].calculatePerimeter() > maxArea.calculatePerimeter()) {
+                maxArea = figures[i];
             }
         }
-        return figures[index];
+        return maxArea;
     }
 
 
     static Figure getHighestArea(Figure[] figures) {
         if (figures == null)
             throw new IllegalArgumentException("Brak tablicy");
-        int index = 0;
-        double maxAreaValue = 0;
+        Figure maxArea = figures[0];
         for (int i = 0; i < figures.length; i++) {
-            if (figures[i].calculateArea() > maxAreaValue) {
-                maxAreaValue = figures[i].calculateArea();
-                index = i;
+            if (figures[i].calculateArea() > maxArea.calculateArea()) {
+                maxArea = figures[i];
             }
         }
-        return figures[index];
+        return maxArea;
     }
 }

@@ -16,15 +16,15 @@ public class PersonService {
         return cnt;
     }
 
-    public double getMaxIncome(Person[] people) {
+    public Person getMaxIncome(Person[] people) {
         if (people == null)
             throw new IllegalArgumentException("No array has been choosen");
-        double max = 0;
+        Person maxIncome = people[0];
         for (int i = 0; i < people.length; i++) {
-            if (people[i] != null && people[i].getIncome() > max)
-                max = people[i].getIncome();
+            if (people[i] != null && people[i].getIncome() > maxIncome.getIncome())
+                maxIncome = people[i];
         }
-        return max;
+        return maxIncome;
     }
 
 

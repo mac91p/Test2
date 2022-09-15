@@ -5,14 +5,14 @@ public class Runner {
 
         long start1 = System.nanoTime();
         String s1 = "";
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             s1 = s1 + i + " ";
         }
         long stop1 = System.nanoTime();
 
         long start2 = System.nanoTime();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 100 ; i++) {
+        for (int i = 0; i < 100000; i++) {
             sb.append(i);
             sb.append(" ");
         }
@@ -21,7 +21,7 @@ public class Runner {
 
         long result1 = stop1 - start1;
         long result2 = stop2 - start2;
-        System.out.println("StringBuilder jest szybszy " + ((double)result1/result2) + " razy");
+        System.out.println("StringBuilder jest szybszy " + ((double)result1/result2) + " razy.");
     }
 }
 //Spowodowane jest to faktem iż String jest niezmienny, tzn. raz utworzony już zawsze ma taką postać. W powyższym przykładzie z konkatenacją,
